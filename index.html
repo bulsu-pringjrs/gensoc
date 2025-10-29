@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>Gender & Society - Quick Reviewer</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+    GENDER & SOCIETY STUDY APP
+    ========================
+    
+    HOW TO RUN:
+    - Simply open this index.html file in any modern web browser
+    - No server required - works completely offline (except Unsplash images)
+    
+    HOW TO MODIFY CONTENT:
+    - Edit the SEED_DATA object in app.js to add/modify topics and flashcards
+    - Change topic summaries, flashcard Q&A pairs, or schedule recommendations
+    
+    HOW TO CHANGE IMAGES:
+    - Modify the getTopicImage() function in app.js
+    - Replace Unsplash URLs with local images or different remote sources
+    - Ensure alt text is updated for accessibility
+    
+    FEATURES:
+    - Spaced repetition flashcards with performance tracking
+    - Auto-generated quizzes with scoring
+    - Rapid review mode with timer
+    - Pomodoro study timer
+    - Progress saved in browser localStorage
+    - Printable cheat sheets
+    - Full keyboard navigation and screen reader support
+    - Responsive design for mobile and desktop
+    - Dark/light theme toggle
+    -->
+
+    <div id="app" class="app">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1 class="app-title">Gender & Society Reviewer</h1>
+                <div class="header-controls">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Toggle high contrast mode">
+                        <span class="accessibility-icon">⚡</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-body">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar" role="navigation" aria-label="Main navigation">
+                <div class="sidebar-content">
+                    <ul class="nav-menu" role="menubar">
+                        <li role="none">
+                            <button class="nav-item active" data-view="home" role="menuitem" tabindex="0">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-text">Home</span>
+                            </button>
+                        </li>
+                        <li role="none">
+                            <button class="nav-item" data-view="rapid-review" role="menuitem" tabindex="-1">
+                                <span class="nav-icon">⚡</span>
+                                <span class="nav-text">Rapid Review</span>
+                            </button>
+                        </li>
+                        <li role="none">
+                            <button class="nav-item" data-view="study-timer" role="menuitem" tabindex="-1">
+                                <span class="nav-icon">⏱️</span>
+                                <span class="nav-text">Study Timer</span>
+                            </button>
+                        </li>
+                        <li role="none">
+                            <button class="nav-item" data-view="progress" role="menuitem" tabindex="-1">
+                                <span class="nav-icon">📊</span>
+                                <span class="nav-text">Progress</span>
+                            </button>
+                        </li>
+                        <li role="none">
+                            <button class="nav-item" data-view="print" role="menuitem" tabindex="-1">
+                                <span class="nav-icon">🖨️</span>
+                                <span class="nav-text">Print Notes</span>
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <div class="topics-section">
+                        <h3 class="section-title">Topics</h3>
+                        <ul class="topics-menu" id="topics-nav" role="menubar">
+                            <!-- Topics will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content" role="main">
+                <div id="content-area" class="content-area">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modal-body" class="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true">
+        <!-- Toast notifications will be populated by JavaScript -->
+    </div>
+
+    <!-- Print Styles -->
+    <div id="print-content" class="print-only">
+        <!-- Print content will be populated by JavaScript -->
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
